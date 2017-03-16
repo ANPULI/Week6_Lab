@@ -17,14 +17,19 @@ class PancakeStack():
     # Returns the index of largest unsorted pancake
     def find_largest_pancake(self, index):
         largest_index = index
-        #write your code here
+        for i in range(index+1):
+            if self.stack[i] == max(self.stack[:index+1]):
+                return i
 
-        return largest_index
+        
 
     # Slide the pan under pancake at desired index and flip to top
     def flip(self, index):
         #write your code here
-        return
+        temp = self.stack[:index+1]
+        temp.reverse()
+        temp.extend(self.stack[index+1:])
+        self.stack = temp
 
 
 def sort_pancakes(pancakes):
