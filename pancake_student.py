@@ -18,9 +18,9 @@ class PancakeStack():
     def find_largest_pancake(self, index):
         largest_index = index
         for i in range(index+1):
-            if self.stack[i] == max(self.stack[:index+1]):
-                return i
-
+            if self.stack[largest_index] < self.stack[i]:
+                largest_index = i
+        return largest_index
         
 
     # Slide the pan under pancake at desired index and flip to top
