@@ -9,12 +9,12 @@ class MinMaxQueue:
     def pop_min(self):
         #perform on the min
     
-        return
+        return self.sorted_q.pop(0)
 
     def pop_max(self):
         #perform on the max
 
-        return
+        return self.sorted_q.pop()
 
 def main():
     #create the lists of integers and signs, respectively
@@ -26,9 +26,17 @@ def main():
     result = []
     #decide if you'd take out the min or max of the integer list
     #and append corresponding sign after it
-
+    for sign in sign_array:
+        if sign == "<":
+            result.append(mmq.pop_min())
+            result.append(sign)
+        else:
+            result.append(mmq.pop_max())
+            result.append(sign)
+    result.append(mmq.pop_max())
     print(result)
 
 main()
+
 
 
