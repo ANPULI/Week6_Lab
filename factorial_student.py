@@ -1,5 +1,7 @@
 def factorial(num):
-    return
+    if num == 0 or num == 1:
+        return 1
+    return num*factorial(num-1)
 
 def main():
     number = int(input("Enter a nonnegative integer: "))
